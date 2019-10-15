@@ -67,8 +67,7 @@ hdf5.close()
 
 feat_shape=(np.shape(imgs)[0],64,240)
 
-print("*********************************************************")
-print(np.shape(imgs)[0])
+
 hdf5_file.create_dataset("feat",feat_shape, np.float32)
 for q in range(0,np.shape(imgs)[0]):
     im=imgs[q]
