@@ -276,7 +276,7 @@ with tf.Session(config=config) as sess:
     freq4=np.array(feat4["feat"])
     feat4.close()
 
-    hdf5_file=h5py.File('../test_data/test_dataset.hdf5','r')
+    hdf5_file=h5py.File('../test_data/test_imgs_v2.hdf5','r')
 
     tx=np.array(hdf5_file['test_img'])
     tx=np.float32(tx)

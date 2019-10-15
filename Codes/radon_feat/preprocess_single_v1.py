@@ -17,7 +17,7 @@ from radon_transform_features import radon_transform_features
 import numpy as np
 import argparse
 
-#extract radon features from a set of patches at 10 angles
+#Extract radon features from a set of patches at 10 angles
 def extractRadonFeat(image_patches):
     radonFeatures = radon_transform_features(image_patches, numAngles=10,doublefftnorm=True)
     radonFeatures = np.squeeze(radonFeatures)
