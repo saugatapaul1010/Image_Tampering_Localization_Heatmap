@@ -17,6 +17,8 @@ import skimage.io as io
 from matplotlib import pyplot as plt
 import scipy.misc
 
+import warnings
+warnings.filterwarnings('ignore')
 
 #tf.reset_default_graph()
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
@@ -287,9 +289,7 @@ with tf.Session(config=config) as sess:
     nTx1=np.zeros((batch_size,64,240))
     n1=0
     n2=freq4.shape[0]
-    #n2=len(list(hdf5_file['test_img'])) #Previously this was set to 8. Now this is set to 10.
-    print("*********************************************************************")
-    print(n2)
+
     for imNb in range(n1,n2):
         nTx[imNb-n1]=tx[imNb]
         nTy[imNb-n1]=ty[imNb]
