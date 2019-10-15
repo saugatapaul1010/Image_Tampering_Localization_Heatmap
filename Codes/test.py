@@ -24,7 +24,7 @@ log_device_placement = True
 # Parameters
 lr = 0.00003
 training_iters = 50000000
-batch_size = 31 #This value should be equal to the total files present in the directory
+batch_size = 31 #This value should be equal to the total files present in the directory. Ste this to len(filenames) or np.shape(feature array)[0]
 display_step = 10
 nb_nontamp_img=16960
 nb_tamp_img=68355
