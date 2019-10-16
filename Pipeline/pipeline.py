@@ -34,8 +34,11 @@ import scipy.misc
 import gc
 import argparse
 
+global folder
 
-folder = "test_images/"
+def folder_name(directory):
+    folder = directory
+    print(folder)
 files = os.listdir(folder)
 hdf5_path = 'test_imgs_v2.hdf5'
 
@@ -46,23 +49,23 @@ train_shape = (n, 256, 256, 3)
 test_shape = (n,256,256)
 
 hdf5_file = h5py.File(hdf5_path, mode='w')
-hdf5_file.create_dataset(name="test_img", 
-                         shape=train_shape, 
+hdf5_file.create_dataset(name="test_img",
+                         shape=train_shape,
                          compression=None)
 
-hdf5_file.create_dataset(name="test_labels", 
+hdf5_file.create_dataset(name="test_labels",
                          shape=test_shape,
                          compression=None)
 
 for i,file_name in enumerate(files):
-    
+
     #Read the images
     rgb_img = Image.open(folder+file_name)
     rgb_img = rgb_img.resize((256,256))
-    
+
     #Convert to grayscale
     gray_img = rgb_img.convert('L')
-    
+
     hdf5_file["test_img"][i, ...] = rgb_img
     hdf5_file["test_labels"][i, ...] = gray_img
 
@@ -465,3 +468,11 @@ with tf.Session(config=config) as sess:
         plt.colorbar(probability_graph)
         plt.show()
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Enter the directory name where you have the test data')
+    parser.add_argument('--dir', default='test_images', help='default directory name for the test images')
+    args = parser.parse_args()
+
+    print("INSIDE MAIN")
+
+    folder_name(args.dir)
