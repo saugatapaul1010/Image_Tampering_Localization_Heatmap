@@ -465,5 +465,3 @@ with tf.Session(config=config) as sess:
         plt.colorbar(probability_graph)
         plt.show()
 
-
-
