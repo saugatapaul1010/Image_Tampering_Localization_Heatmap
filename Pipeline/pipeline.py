@@ -32,6 +32,7 @@ import skimage.io as io
 from matplotlib import pyplot as plt
 import scipy.misc
 import gc
+import argparse
 
 
 folder = "test_images/"
@@ -463,4 +464,6 @@ with tf.Session(config=config) as sess:
         #ax3.set_title('Final Probability of the Class')
         plt.colorbar(probability_graph)
         plt.show()
+
+
 
