@@ -472,7 +472,7 @@ with tf.Session(config=config) as sess:
         plt.colorbar(probability_graph)
         plt.show()
 
-"""
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Enter the directory name where you have the test data')
     parser.add_argument('--dir', default='test_images/', help='default directory name for the test images')
@@ -480,4 +480,4 @@ if __name__ == "__main__":
 
 
     folder_name(args.dir)
-"""
+
