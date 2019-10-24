@@ -82,3 +82,5 @@ def fftscores(arrs, is_already_fft=False):
 
 	return absfft, score, np.divide(fftmax, fftavg+1e-16), fftavg
 
+#Comment
+
