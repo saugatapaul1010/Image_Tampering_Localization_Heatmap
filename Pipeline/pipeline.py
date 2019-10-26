@@ -42,6 +42,7 @@ def folder_name(directory):
     print("Inside folder")
     print(folder)
 """
+
 folder = "test_images/"
 files = os.listdir(folder)
 hdf5_path = 'test_imgs_v2.hdf5'
